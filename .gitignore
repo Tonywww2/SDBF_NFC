@@ -44,6 +44,8 @@ kubejs/*
 !kubejs/contentpacks/
 kubejs/contentpacks/*
 !kubejs/contentpacks/sdbf_nfc_contentpacks/
+kubejs/contentpacks/sdbf_nfc_contentpacks/*
+!kubejs/contentpacks/sdbf_nfc_contentpacks/**
 
 # ====== SDBF_DLC 目录 ======
 !SDBF_DLC/

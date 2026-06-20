@@ -1,0 +1,190 @@
+// priority: 1000
+// [merged] memory.js, miracle.js, oath.js, witness.js
+
+// ===== memory.js =====
+StartupEvents.registry('minecraft:item', event => {
+    event.create('kubejs:dark_witness_memory', 'basic')
+        .texture('kubejs:item/curios/dark_witness_memory')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('minecraft:generic.armor', 'DarkWitnessMemoryArmorAddition', FloorFix(nbt.getFloat('attriValue'), 2), 'addition')
+            })
+        )
+        .tag('curios:memory')
+
+    event.create('kubejs:reunion_memory', 'basic')
+        .texture('kubejs:item/curios/reunion_memory')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('attributeslib:experience_gained', 'ReunionMemoryExperienceMultiplier', FloorFix(nbt.getFloat('attriValue'), 2), 'addition')
+            })
+        )
+        .tag('curios:memory')
+
+    event.create('kubejs:fear_memory', 'basic')
+        .texture('kubejs:item/curios/fear_memory')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('attributeslib:crit_damage', 'FearMemoryCritDamageAddition', FloorFix(nbt.getFloat('attriValue'), 2), 'addition')
+            })
+        )
+        .tag('curios:memory')
+
+    event.create('kubejs:cheat_death_memory', 'basic')
+        .texture('kubejs:item/curios/cheat_death_memory')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('minecraft:generic.luck', 'CheatDeathMemoryLuckAddition', FloorFix(nbt.getFloat('attriValue'), 2), 'addition')
+            })
+        )
+        .tag('curios:memory')
+
+    event.create('kubejs:desperate_memory', 'basic')
+        .texture('kubejs:item/curios/desperate_memory')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('minecraft:generic.attack_damage', 'DesperateMemoryAttackDamageAddition', FloorFix(nbt.getFloat('attriValue'), 2), 'addition')
+            })
+        )
+        .tag('curios:memory')
+})
+
+// ===== miracle.js =====
+StartupEvents.registry('minecraft:item', event => {
+    event.create('kubejs:eternal_miracle', 'basic')
+        .texture('kubejs:item/curios/eternal_miracle')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('minecraft:generic.armor', 'EternalMiracleArmorAddition', nbt.getInt('value') * 0.01, 'addition')
+            })
+        )
+        .tag('curios:miracle')
+
+    event.create('kubejs:incandescent_miracle', 'basic')
+        .texture('kubejs:item/curios/incandescent_miracle')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('minecraft:generic.attack_damage', 'IncandescentMiracleAttackDamageAddition', nbt.getInt('value') * 0.01, 'addition')
+            })
+        )
+        .tag('curios:miracle')
+
+
+    event.create('kubejs:primal_miracle', 'basic')
+        .texture('kubejs:item/curios/primal_miracle')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+            .dynamicAttribute(ctx => {
+                const item = ctx.getStack()
+                const nbt = item.getOrCreateTag()
+                ctx.modify('attributeslib:experience_gained', 'PrimalMiracleExperienceMultiplier', nbt.getInt('value') * 0.01, 'addition')
+            })
+        )
+        .tag('curios:miracle')
+})
+
+// ===== oath.js =====
+StartupEvents.registry('minecraft:item', event => {
+    event.create('kubejs:eternal_oath', 'basic')
+        .texture('kubejs:item/curios/eternal_oath')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .onEquip((itemFrom, ctx, itemTo) => {
+                /**@type {Internal.ServerPlayer} */
+                const entity = ctx.entity()
+                const level = entity.level
+                if (level.isClientSide()) return
+                if (!entity.isPlayer()) return
+                entity.setKeepInventory(true)
+            })
+            .onUnequip((itemFrom, ctx, itemTo) => {
+                /**@type {Internal.ServerPlayer} */
+                const entity = ctx.entity()
+                const level = entity.level
+                if (level.isClientSide()) return
+                if (!entity.isPlayer()) return
+                entity.setKeepInventory(false)
+            })
+            .canUnequip(() => true)
+        )
+        .tag('curios:oath')
+})
+
+// ===== witness.js =====
+StartupEvents.registry('minecraft:item', event => {
+    event.create('kubejs:story_witness', 'basic')
+        .texture('kubejs:item/curios/story_witness')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+        )
+        .tag('curios:witness')
+    event.create('kubejs:story_proof', 'basic').texture('kubejs:item/materials/story_proof').maxStackSize(1)
+
+    // event.create('kubejs:perseverance_witness', 'basic')
+        // .texture('kubejs:item/curios/perseverance_witness')
+        // .maxStackSize(1)
+        // .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            // .canEquip(() => true)
+            // .canUnequip(() => true)
+        // )
+        // .tag('curios:witness')
+
+    event.create('kubejs:bravery_witness', 'basic')
+        .texture('kubejs:item/curios/bravery_witness')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+        )
+        .tag('curios:witness')
+
+    event.create('kubejs:knowledge_witness', 'basic')
+        .texture('kubejs:item/curios/knowledge_witness')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip(() => true)
+            .canUnequip(() => true)
+        )
+        .tag('curios:witness')
+})
+

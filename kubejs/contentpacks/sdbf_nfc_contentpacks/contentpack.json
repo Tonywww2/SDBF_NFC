@@ -1,0 +1,12 @@
+{
+    "id": "sdbf_nfc",
+    "name": "SDBF-NFC",
+    "description": "胸腔器官系统内容包",
+    "version": "1.0.0",
+    "authors":
+    [
+        "Tonywww"
+    ],
+    "dependencies":
+    []
+}
