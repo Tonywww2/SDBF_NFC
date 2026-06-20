@@ -1,6 +1,8 @@
 {
   "chestcavity": "kubejs:cc_types/undead/ghoul.json",
   "entities": [
-    "graveyard:ghoul"
+    "terra_entity:spore_zombie",
+    "terra_entity:hat_spore_zombie",
+    "terra_entity:blood_zombie"
   ]
 }

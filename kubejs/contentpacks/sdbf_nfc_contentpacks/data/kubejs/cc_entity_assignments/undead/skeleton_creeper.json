@@ -1,6 +1,11 @@
 {
   "chestcavity": "kubejs:cc_types/undead/skeleton_creeper.json",
   "entities": [
-    "graveyard:skeleton_creeper"
+    "terra_entity:anger_bones",
+    "terra_entity:short_bones",
+    "terra_entity:big_bones",
+    "terra_entity:big_anger_bones",
+    "terra_entity:big_muscle_anger_bones",
+    "terra_entity:big_helmet_anger_bones"
   ]
 }

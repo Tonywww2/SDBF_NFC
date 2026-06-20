@@ -1,6 +1,6 @@
 {
   "chestcavity": "kubejs:cc_types/animals/dragonfly.json",
   "entities": [
-    "crittersandcompanions:dragonfly"
+    "twilightforest:mosquito_swarm"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "chestcavity": "kubejs:cc_types/animals/cassowary.json",
   "entities": [
-    "wildernature:cassowary"
+    "twilightforest:tiny_bird"
   ]
 }

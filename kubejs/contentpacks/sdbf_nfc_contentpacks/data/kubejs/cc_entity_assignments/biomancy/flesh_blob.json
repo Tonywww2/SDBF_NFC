@@ -1,9 +1,6 @@
 {
   "chestcavity": "kubejs:cc_types/biomancy/flesh_blob.json",
   "entities": [
-    "terra_entity:demon",
-    "terra_entity:demon_eye",
-    "terra_entity:demon",
-    "terra_entity:demon"
+    "terra_entity:lava_slime"
   ]
 }

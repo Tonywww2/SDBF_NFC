@@ -1,6 +1,6 @@
 {
   "chestcavity": "kubejs:cc_types/animals/ferret.json",
   "entities": [
-    "crittersandcompanions:ferret"
+    "terra_entity:hornet"
   ]
 }

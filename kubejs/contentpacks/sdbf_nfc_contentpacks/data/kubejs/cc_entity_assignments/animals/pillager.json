@@ -4,16 +4,7 @@
     "minecraft:pillager",
     "minecraft:illusioner",
     "minecraft:vindicator",
-    "illagerinvasion:provoker",
-    "illagerinvasion:invoker",
-    "illagerinvasion:necromancer",
-    "illagerinvasion:basher",
-    "illagerinvasion:sorcerer",
-    "illagerinvasion:archivist",
-    "illagerinvasion:inquisitor",
-    "illagerinvasion:marauder",
-    "illagerinvasion:alchemist",
-    "illagerinvasion:firecaller",
-    "illagerinvasion:surrendered"
+    "bagusmob:ninjar",
+    "bagusmob:burner_hog"
   ]
 }
