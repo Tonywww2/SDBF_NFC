@@ -1,0 +1,204 @@
+{
+	autofocus_id: "5FA23D3C066518D9"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "nfc"
+	group: "09172E2BE2B038C0"
+	icon: "chestcavity:chest_opener"
+	id: "7DB022AF5CADF6C3"
+	order_index: 1
+	quest_links: [{
+		id: "793DB2249F27CFEC"
+		linked_quest: "73531FB69122489F"
+		x: -3.0d
+		y: 0.0d
+	}]
+	quests: [
+		{
+			dependencies: ["73531FB69122489F"]
+			hide_dependent_lines: true
+			id: "5FA23D3C066518D9"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "3ABB436D6CF942A2"
+				item: "chestcavity:chest_opener"
+				type: "item"
+			}]
+			title: "千脆万骨"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5FA23D3C066518D9"]
+			id: "764036F3659910F8"
+			rewards: [{
+				id: "24398D4C22E0D94A"
+				item: {
+					Count: 1
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "chestcavity:creative_surgery"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "！？猪猪？！"
+			tasks: [{
+				id: "2D219B532098929F"
+				item: {
+					Count: 1
+					id: "kubejs:pig_stomach"
+					tag: {
+						"chestcavity:organ_compatibility": {
+							name: "entity.minecraft.pig"
+							owner: [I;
+								1228440233
+								1875068004
+								-1523686940
+								-1993349256
+							]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["5FA23D3C066518D9"]
+			description: ["你只需要手持&b被感染的器官&r，点击任意的&b含水方块&r，就可以把他们洗干净了！"]
+			id: "5533E0950E844D3A"
+			tasks: [{
+				id: "018F2E0E93CD6B52"
+				item: "minecraft:water_bucket"
+				type: "item"
+			}]
+			title: "清洗器官"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5FA23D3C066518D9"]
+			id: "458FCC75900ECDDA"
+			tasks: [{
+				id: "112E03BD12EB9BA8"
+				item: {
+					Count: 1
+					id: "kubejs:small_acid_tank"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"458FCC75900ECDDA"
+				"247CF7F804AB2618"
+			]
+			dependency_requirement: "one_completed"
+			id: "219E7D19F51E40DC"
+			tasks: [{
+				id: "38CD393D82D151BA"
+				item: "kubejs:player_21_injection"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"219E7D19F51E40DC"
+				"0F3C8F81C62E9027"
+			]
+			id: "2F1855E29793B69B"
+			tasks: [{
+				id: "483C487651161378"
+				item: "kubejs:player_25_injection"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2F1855E29793B69B"]
+			id: "3E80B21B921F246C"
+			tasks: [{
+				id: "2596D3BD86831A98"
+				item: "kubejs:player_27_injection"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5FA23D3C066518D9"]
+			description: ["可以从恶魔或恶魔眼球身上获得。"]
+			id: "0F3C8F81C62E9027"
+			tasks: [{
+				id: "44688C293FD63F34"
+				item: {
+					Count: 1
+					id: "kubejs:worm_neuron"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["5FA23D3C066518D9"]
+			id: "247CF7F804AB2618"
+			tasks: [{
+				id: "067A3FE4446E7B18"
+				item: "kubejs:empty_injection"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3E80B21B921F246C"]
+			id: "071C816DF0065ECD"
+			tasks: [{
+				id: "62EAD376E544B43D"
+				item: "kubejs:revolution_machine_injection"
+				type: "item"
+			}]
+			x: 15.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3E80B21B921F246C"]
+			id: "412E887123E0C218"
+			tasks: [{
+				id: "32343BB5F30E1AA3"
+				item: "kubejs:gula_injection"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3E80B21B921F246C"]
+			id: "76D2B6F8FF2CB19E"
+			tasks: [{
+				id: "7A5FBEF69BAFE010"
+				item: "kubejs:rose_injection"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 3.0d
+		}
+	]
+	title: "千脆万骨"
+}
