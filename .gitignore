@@ -5,6 +5,7 @@
 # ====== 根目录白名单 ======
 !.gitignore
 !CREDIT.md
+!README_SDBF_NFC.md
 
 # ====== config 目录 ======
 !config/
